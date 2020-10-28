@@ -1,1 +1,73 @@
-<!DOCTYPE html><html><head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><title>Antikytherian</title></head><body><table style="width: 100%; height: 100%;" cellspacing="0" cellpadding="0" border="0"><tbody><tr><td style="width: 100%; height: 100%; background-color: white; text-align: right; vertical-align: top;"><!-- Insert Table Here ---------------------- --><table style="width: 100%; height: 100%;" cellspacing="0" cellpadding="0" border="0"><tbody><tr><td style="text-align: right; width: 90%; height: 10%; vertical-align: middle; background-color: white;"><h3>ANTIKYTHERIAN <br>FICTICIOUS BUSINESS <br></td><td style="text-align: center; width: 10%; height: 10%; vertical-align: middle; background-color: white;">002.an.001<br>Jul 28 2020<br>BRODSKY<br><a href="http://BRODSKY.VISION">VISION</a><br><a href="http://jsnb76.github.io/017.tc/003/index.html">&lt&lt </a> - <a href="http://jsnb76.github.io/002.an/002/index.html"> &gt&gt</a></td></tr><tr><td style="text-align: center; width: 90%; height: 90%; vertical-align: top; background-color: white;"><h1>Antikytherian</h1><br><h4>Producing Technology of Today and YesterYear<br></h4>To Conquer the Celestial Knowledge Through Any Depth of Time By Bringing Magic to the Surface<br><br><h3>0<br>Origin Story<br>0<br>Legal Structure<br>0<br>Experience and Success Imperitive<br>0<br>0<br>Business Phase by Phase Growth Map<br>0<br></h3></td><td style="text-align: center; width: 10%; height: 90%; background-color: white;"><br><br>A<BR>n<BR>t<BR>i<BR>k<BR>y<BR>t<BR>h<BR>e<BR>r<BR>i<BR>a<BR>n<BR><br></td></tr></tbody></table><!-- ---------------- ------------------------> </td></tr></tbody></table><p><br></p></body></html>
+<!DOCTYPE html>
+<!--
+	NOTES:
+	1. All tokens are represented by '$' sign in the template.
+	2. You can write your code only wherever mentioned.
+	3. All occurrences of existing tokens will be replaced by their appropriate values.
+	4. Blank lines will be removed automatically.
+	5. Remove unnecessary comments before creating your template.
+-->
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="authoring-tool" content="Adobe_Animate_CC">
+<title>AntikytherianHTML5</title>
+<!-- write your code here -->
+<script src="https://code.createjs.com/1.0.0/createjs.min.js"></script>
+<script src="AntikytherianHTML5.js"></script>
+<script>
+var canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;
+function init() {
+	canvas = document.getElementById("canvas");
+	anim_container = document.getElementById("animation_container");
+	dom_overlay_container = document.getElementById("dom_overlay_container");
+	var comp=AdobeAn.getComposition("BF49D5059E346645BD5C7D1DB6A86983");
+	var lib=comp.getLibrary();
+	var loader = new createjs.LoadQueue(false);
+	loader.addEventListener("fileload", function(evt){handleFileLoad(evt,comp)});
+	loader.addEventListener("complete", function(evt){handleComplete(evt,comp)});
+	var lib=comp.getLibrary();
+	loader.loadManifest(lib.properties.manifest);
+}
+function handleFileLoad(evt, comp) {
+	var images=comp.getImages();	
+	if (evt && (evt.item.type == "image")) { images[evt.item.id] = evt.result; }	
+}
+function handleComplete(evt,comp) {
+	//This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
+	var lib=comp.getLibrary();
+	var ss=comp.getSpriteSheet();
+	var queue = evt.target;
+	var ssMetadata = lib.ssMetadata;
+	for(i=0; i<ssMetadata.length; i++) {
+		ss[ssMetadata[i].name] = new createjs.SpriteSheet( {"images": [queue.getResult(ssMetadata[i].name)], "frames": ssMetadata[i].frames} )
+	}
+	exportRoot = new lib.AntikytherianHTML5();
+	stage = new lib.Stage(canvas);	
+	//Registers the "tick" event listener.
+	fnStartAnimation = function() {
+		stage.addChild(exportRoot);
+		createjs.Ticker.framerate = lib.properties.fps;
+		createjs.Ticker.addEventListener("tick", stage);
+	}	    
+	//Code to support hidpi screens and responsive scaling.
+	AdobeAn.makeResponsive(false,'both',false,1,[canvas,anim_container,dom_overlay_container]);	
+	AdobeAn.compositionLoaded(lib.properties.id);
+	fnStartAnimation();
+}
+</script>
+<!-- write your code here -->
+</head>
+<body onload="init();" style="margin:0px;">
+
+
+<table style="width: 100%; height: 100%;" cellspacing="0" cellpadding="0" border="0"><tbody><tr><td style="width: 100%; height: 100%; background-color: white; text-align: right; vertical-align: top;"><!-- Insert Table Here ---------------------- --><table style="width: 100%; height: 100%;" cellspacing="0" cellpadding="0" border="0"><tbody><tr><td style="text-align: right; width: 90%; height: 10%; vertical-align: middle; background-color: white;"><h3>ANTIKYTHERIAN <br>FICTICIOUS BUSINESS <br></h3></td><td style="text-align: center; width: 10%; height: 10%; vertical-align: middle; background-color: white;">002.an.001<br>Jul 28 2020<br>BRODSKY<br><a href="http://brodsky.vision/">VISION</a><br><a href="http://jsnb76.github.io/017.tc/003/index.html">&lt;&lt; </a> - <a href="http://jsnb76.github.io/002.an/002/index.html"> &gt;&gt;</a></td></tr><tr><td style="text-align: center; width: 90%; height: 90%; vertical-align: top; background-color: white;"><h1>Antikytherian</h1><br><h4>Producing Technology of Today and YesterYear<br></h4>To Conquer the Celestial Knowledge Through Any Depth of Time By Bringing Magic to the Surface<br><br><h3>0<br>Origin Story<br>0<br>Legal Structure<br>0<br>Experience and Success Imperitive<br>0<br>0<br>Business Phase by Phase Growth Map<br>0<br></h3></td><td style="text-align: center; width: 10%; height: 90%; background-color: white;"><br><br>A<br>n<br>t<br>i<br>k<br>y<br>t<br>h<br>e<br>r<br>i<br>a<br>n<br><br></td></tr></tbody></table><!-- ---------------- ------------------------> </td></tr></tbody></table><p><br></p>
+
+
+	<div id="animation_container" style="background-color:rgba(0, 0, 0, 1.00); width:100; height:100">
+		<canvas id="canvas" width="100%" height="100%" style="position: absolute; display: block; background-color:rgba(0, 0, 0, 1.00);"></canvas>
+		<div id="dom_overlay_container" style="pointer-events:none; overflow:hidden; width:100%; height:100%; position: absolute; left: 0px; top: 0px; display: block;">
+		</div>
+	</div>
+</body>
+</html>
